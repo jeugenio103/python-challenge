@@ -1,19 +1,18 @@
-
-# First we'll import the os module
-# This will allow us to create file paths across operating systems
+#Dependencies
 import os
-
-# Module for reading CSV files
 import csv
 
+#CSVPATH
 csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
 
+#Initial Variables/Lists
 row_count = 0
 month_count = []
 total = 0
 change = []
 list = []
 
+#Opening file and looping
 with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -29,6 +28,7 @@ with open(csvpath) as csvfile:
     for i in range(len(list)-1):
         change.append(list[i+1]-list[i])
 
+#Calculating based on new lists
 largest_increase = max(change)
 largest_decrease = min(change)
 
