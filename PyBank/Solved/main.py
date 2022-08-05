@@ -14,9 +14,7 @@ list = []
 
 #Opening file and looping
 with open(csvpath) as csvfile:
-
     csvreader = csv.reader(csvfile, delimiter=',')
-
     csv_header = next(csvreader)
 
     for row in csvreader:
